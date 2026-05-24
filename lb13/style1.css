@@ -1,0 +1,35 @@
+h1{
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  color: #212529;
+  background-color: #dbede6;
+}
+a:hover   { color: rgb(8, 70, 21); }
+#one {
+  text-align: left;
+  font-weight: 500;
+  line-height: 1.2;
+}
+#two{
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration :underline;
+}
+#three {
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.8;
+}
