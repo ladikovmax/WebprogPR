@@ -1,16 +1,54 @@
 <!DOCTYPE html>
-<html lang="uk" data-bs-theme="light">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Демонстрація стилів CSS</title>
-    <link rel="stylesheet" href="bootstrap.css">
-    <style>        
-    
-    </style>
+    <meta name="description" content="Лабораторна робота 14">
+    <link rel="stylesheet" href="style.css">
+    <title>Про себе</title>
 </head>
 <body>
-        <h1 class="display-3">Лабораторна робота: Класи CSS</h1>
-    
+    <div class="container">
+        
+        <h1 id="top" style="text-align: center;">Лабораторна робота 14</h1>
+        <hr style="border: 0; height: 1px; background: #e5e7eb; margin: 30px 0;">
+
+        <h2 class="style-one">Про себе</h2>
+        <p>Я – енергійна та цілеспрямована людина, постійно шукаю можливості для зростання й самовдосконалення. Мені подобається збирати, структурувати й аналізувати інформацію, витягуючи максимум користі з неї.</p>
+        
+        <h2 class="style-one">Мої підходи до роботи</h2>
+        <p class="accent-text">Досягаю результатів завдяки тому, що занурююся у процеси з головою і докладаю максимум зусиль.</p>
+        <div class="footnote">Примітка: функція «максимум зусиль» зазвичай автоматично активується за 12 годин до дедлайну.</div>
+
+        <h2 class="style-two">Моє хобі: Рукоділля</h2>
+        <p class="info-card">Моє хобі – це рукоділля. Мені подобається створювати унікальні вироби з різних матеріалів, використовуючи свої навички та творчість.</p>
+
+        <h2 class="style-two">Моє хобі: Програмування</h2>
+        <p class="info-card">Мені подобається створювати нові проекти, вирішувати складні задачі та постійно вдосконалювати свої навички.</p>
+        
+<pre class="code-block"><code>let str = prompt("Введіть рядок");
+let target = '2021';
+
+let pos = -1;
+let count = 0;
+while ((pos = str.indexOf(target, pos + 1)) != -1) {
+    count++;
+}
+
+alert(count);</code></pre>
+
+        <h2 class="style-three">Мої гіперпосилання</h2>
+        <ul class="menu">
+            <li><a href="https://adey4k.github.io/Lab12/" target="_blank">Лабораторна робота №12</a></li>
+            <li><a href="#top" target="_self">У початок сторінки</a></li>
+        </ul>
+
+        <div class="small">
+            <div>Студент групи 101ТК Ладіков М.Ю.</div>
+            <div>
+                Контакти: <a href="mailto:ladikovmax@gmail.com">Email</a> | <a href="https://t.me/adey4k">Telegram</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
