@@ -1,5 +1,5 @@
 const num = document.getElementById('num');
-let primesText = '';
+let primesText = 'Прості числа від 1 до 100: ';
 
 for (let i = 2; i <= 100; i++) {
     let isPrime = true;
@@ -10,7 +10,7 @@ for (let i = 2; i <= 100; i++) {
         }
     }
     if (isPrime) {
-        primesText += (primesText === '' ? i : ', ' + i);
+        primesText += (primesText === 'Прості числа від 1 до 100: ' ? i : ', ' + i);
     }
 }
 
