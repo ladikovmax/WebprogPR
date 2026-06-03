@@ -27,7 +27,7 @@ function initApplication() {
             loadScript("script15_6.js");
             break;
         default:
-            console.error("Невірне значення. Введіть ціле число від 1 до 6.");
+            initApplication();
             break;
     }
 }

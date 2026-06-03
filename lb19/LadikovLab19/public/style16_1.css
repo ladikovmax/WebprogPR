@@ -1,0 +1,200 @@
+#game {
+    text-align: center;
+    vertical-align: middle;
+    color: red;
+    font-size: 120px;
+}
+#start {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+:root {
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --primary-color: #4a90e2;
+    --primary-hover: #357abd;
+    --text-main: #333333;
+    --border-radius: 8px;
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.center-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: var(--text-main);
+}
+
+/* * UI елементи (Кнопки, Селекти, Посилання)
+ */
+.styled-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s, transform 0.1s;
+    display: inline-block;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.secondary-btn {
+    background-color: #e0e0e0;
+    color: var(--text-main);
+}
+
+.secondary-btn:hover {
+    background-color: #cccccc;
+}
+
+.large-btn {
+    padding: 15px 40px;
+    font-size: 20px;
+}
+
+.styled-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    outline: none;
+}
+
+.nav-links {
+    margin-top: 20px;
+}
+
+.nav-links a {
+    color: var(--primary-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+/* * Макет сторінки гри
+ */
+.game-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* * Секція цільового зображення
+ */
+.current-image-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 250px;
+}
+
+.target-card {
+    border: 2px dashed #bbb;
+    border-radius: var(--border-radius);
+    padding: 10px;
+    background-color: #fafafa;
+    margin-bottom: 15px;
+}
+
+#current-target-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    cursor: grab;
+    border-radius: 4px;
+}
+
+#current-target-img:active {
+    cursor: grabbing;
+}
+
+.instruction-text {
+    font-size: 14px;
+    color: #666;
+}
+
+/* * Ігрова сітка (5x5)
+ */
+.board-section {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 90px);
+    grid-template-rows: repeat(5, 90px);
+    gap: 8px;
+}
+
+.board-cell {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    background-color: #eee;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.board-cell:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.drag-over {
+    opacity: 0.6;
+    border: 2px solid var(--primary-color);
+    transform: scale(0.95);
+}

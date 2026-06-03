@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style16_1.css">   
+    <title>Гра: Знайди пару</title>
+</head>
+<body>
+    <div class="game-wrapper">
+        <header class="game-header">
+            <h1>Знайди пару</h1>
+            <div class="controls">
+                <select id="category" class="styled-select">
+                    <option value="animals">Тварини</option>
+                    <option value="insects">Комахи</option>
+                    <option value="fishes">Риби</option>
+                </select>
+                <button id="restart-btn" class="styled-btn primary-btn">Нова гра</button>
+                <a href="/" class="styled-btn secondary-btn">На головну</a>
+            </div>
+        </header>
+
+        <main class="game-container">
+            <aside class="current-image-section">
+                <h3>Шукаємо:</h3>
+                <div class="target-card">
+                    <img id="current-target-img" draggable="true" src="" alt="Поточна картинка">
+                </div>
+                <p class="instruction-text">Перетягни це зображення на відповідне поле</p>
+            </aside>
+
+            <section class="board-section">
+                <div id="game-board"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/game.js"></script>
+</body>
+</html>
