@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// Вкажіть шлях до папки, де лежать завантажені картинки
 const folderPath = path.join(__dirname, 'images', 'insects'); 
 
 fs.readdir(folderPath, (err, files) => {

@@ -8,10 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentBoardImages = [];
     let currentTotalImages = 0;
 
-    /*
-     * Ініціалізація ігрового циклу.
-     * Отримує ліміт зображень з сервера через API, генерує ігрове поле та цільове зображення.
-     */
     async function initGame() {
         const category = categorySelect.value;
         
@@ -95,12 +91,6 @@ function drop(e) {
 
         if (draggedSrc === droppedOnSrc) {
             const category = categorySelect.value;
-            
-            /*
-             * Повне оновлення стану гри при правильному збігу.
-             * Створюється новий набір зображень для сітки, очищується старе поле, 
-             * рендериться нове та призначається нове цільове зображення.
-             */
             currentBoardImages = generateRandomImages(currentTotalImages, IMAGES_ON_BOARD);
             renderBoard(category, currentBoardImages);
             setNewTargetImage(category);
