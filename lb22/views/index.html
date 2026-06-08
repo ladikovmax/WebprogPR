@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Обчислення квадрату</h1>
+        <p class="description">Введіть число нижче. Програма відправить його на сервер за допомогою AJAX, обчислить квадрат і поверне результат без перезавантаження сторінки.</p>
+        
+        <input type="number" id="numberInput" placeholder="Введіть число">
+        <button id="calculateBtn">Обчислити</button>
+        <p id="resultText"></p>
+    </div>
+
+    <script>
+        /* Обробка кліку та асинхронна взаємодія з сервером через Fetch API */
+        document.getElementById('calculateBtn').addEventListener('click', () => {
+            const numberValue = document.getElementById('numberInput').value;
+            const resultElement = document.getElementById('resultText');
+
+            if (!numberValue) {
+                resultElement.textContent = 'Введіть число.';
+                resultElement.style.color = 'red';
+                return;
+            }
+
+            resultElement.style.color = '#333';
+            resultElement.textContent = 'Обчислення...';
+
+            fetch('/api/square', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ number: numberValue })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Помилка сервера');
+                return response.json();
+            })
+            .then(data => {
+                resultElement.textContent = `Квадрат числа ${numberValue} дорівнює ${data.result}.`;
+            })
+            .catch(error => {
+                resultElement.textContent = 'Помилка з\'єднання з сервером.';
+                resultElement.style.color = 'red';
+            });
+        });
+    </script>
+</body>
+</html>
