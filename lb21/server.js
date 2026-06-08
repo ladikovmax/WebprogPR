@@ -1,4 +1,3 @@
-/* Настройка Express-сервера для отдачи HTML из папки views и статики из папки public */
 const express = require('express');
 const path = require('path');
 const app = express();
