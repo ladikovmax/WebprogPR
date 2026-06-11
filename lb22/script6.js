@@ -2,7 +2,7 @@ function processArray() {
     let input = prompt('Введіть розмірність масиву N(до 25):');
     if (input === null) return;
     let n = parseInt(input);
-    if (isNaN(n) || n <= 0 || n >= 25) {
+    if (isNaN(n) || n <= 0 || n > 25) {
         alert('Будь ласка, введіть коректне позитивне число(до 25)!');
         return;
     }
@@ -19,7 +19,12 @@ function processArray() {
         sumVal += item;
     }
     let avgVal = sumVal / n;
-    let oddVals = arr.filter(item => item % 2 !== 0);
+    let oddVals = [];
+    for (const item of arr) {
+        if (item % 2 !== 0) {
+            oddVals.push(item);
+        }
+    }
 
     let resultText = `Згенерований масив: [${arr.join(', ')}]\n\n`;
     resultText += `Найбільше значення: ${maxVal}\n`;
