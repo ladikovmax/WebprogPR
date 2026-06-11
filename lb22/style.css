@@ -1,0 +1,328 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+}
+
+/* ── Layout ── */
+.container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ── Header ── */
+.header {
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.header-badge {
+    display: inline-block;
+    background: #4a6cf7;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 3px 12px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.title-accent {
+    color: #4a6cf7;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #666;
+}
+
+/* ── Card ── */
+.card {
+    background: #fff;
+    border: 1px solid #dde1ea;
+    border-radius: 8px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* ── Label ── */
+.select-label {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #555;
+}
+
+/* ── Custom select ── */
+.custom-select {
+    position: relative;
+    user-select: none;
+}
+
+.select-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+    outline: none;
+}
+
+.select-trigger:hover {
+    border-color: #4a6cf7;
+    color: #222;
+}
+
+.select-trigger.active {
+    border-color: #4a6cf7;
+    color: #222;
+}
+
+.trigger-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.trigger-text {
+    flex: 1;
+}
+
+.trigger-arrow {
+    width: 16px;
+    height: 16px;
+    color: #999;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+}
+
+.select-trigger.active .trigger-arrow {
+    transform: rotate(180deg);
+}
+
+/* ── Dropdown ── */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    list-style: none;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-height: 340px;
+    overflow-y: auto;
+
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dropdown.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+/* ── Dropdown items ── */
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    outline: none;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+    background: #f0f4ff;
+}
+
+.dropdown-item.selected {
+    background: #e8eeff;
+    font-weight: bold;
+}
+
+.item-num {
+    font-size: 11px;
+    font-weight: bold;
+    color: #4a6cf7;
+    min-width: 22px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.item-title {
+    font-size: 14px;
+    color: #222;
+}
+
+.item-desc {
+    font-size: 11px;
+    color: #888;
+}
+
+/* ── Info panel ── */
+.info-panel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f7ff;
+    border: 1px solid #d0d8ff;
+    border-radius: 6px;
+    padding: 10px 14px;
+    min-height: 46px;
+}
+
+.info-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.info-text {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.info-panel.has-selection .info-text {
+    color: #222;
+}
+
+/* ── Run button ── */
+.run-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 11px 20px;
+    background: #4a6cf7;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.run-btn:hover:not(:disabled) {
+    background: #3558e8;
+}
+
+.run-btn:disabled {
+    background: #b0bcf0;
+    cursor: not-allowed;
+}
+
+.run-btn-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* ── Output ── */
+.output-section {
+    background: #fff;
+    border: 1px solid #dde1ea;
+    border-radius: 8px;
+    overflow: hidden;
+    display: none;
+}
+
+.output-section.visible {
+    display: block;
+}
+
+.output-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #f5f7ff;
+    border-bottom: 1px solid #dde1ea;
+}
+
+.output-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4a6cf7;
+}
+
+.output-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #666;
+}
+
+.output-content {
+    padding: 16px;
+}
+
+.output-text {
+    font-size: 14px;
+    color: #222;
+    line-height: 1.7;
+    white-space: pre-wrap;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* ── Hide particles (not used in simple style) ── */
+.bg-particles {
+    display: none;
+}

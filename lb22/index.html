@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 22</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="title">Лабораторна робота <span class="title-accent">#22</span></h1>
+        </header>
+
+        <section class="card" aria-label="Вибір скрипта">
+            <label class="select-label" for="scriptSelect">Виберіть завдання</label>
+
+            <!-- Custom dropdown -->
+            <div class="custom-select" id="customSelectWrapper">
+                <button class="select-trigger" id="selectTrigger" aria-haspopup="listbox" aria-expanded="false"
+                    aria-controls="selectDropdown" type="button">
+                    <span class="trigger-icon" id="triggerIcon">⚙️</span>
+                    <span class="trigger-text" id="triggerText">Оберіть завдання...</span>
+                    <svg class="trigger-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <ul class="dropdown" id="selectDropdown" role="listbox" aria-label="Список скриптів">
+                    <li class="dropdown-item" role="option" data-value="1" data-icon="⏱️" tabindex="0">
+                        <span class="item-num">01</span>
+                        <div class="item-info">
+                            <span class="item-title">Секунди</span>
+                            <span class="item-desc">Залишок секунд від початку хвилини</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="2" data-icon="⬡" tabindex="0">
+                        <span class="item-num">02</span>
+                        <div class="item-info">
+                            <span class="item-title">Периметр багатокутника</span>
+                            <span class="item-desc">Обчислення периметра правильного багатокутника</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="3" data-icon="🥤" tabindex="0">
+                        <span class="item-num">03</span>
+                        <div class="item-info">
+                            <span class="item-title">FizzBuzz</span>
+                            <span class="item-desc">Числа від 1 до n з умовами кратності 3 та 5</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="4" data-icon="📊" tabindex="0">
+                        <span class="item-num">04</span>
+                        <div class="item-info">
+                            <span class="item-title">Середнє арифметичне</span>
+                            <span class="item-desc">Обчислення середнього арифметичного трьох чисел</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="5" data-icon="➗" tabindex="0">
+                        <span class="item-num">05</span>
+                        <div class="item-info">
+                            <span class="item-title">Подільність чисел</span>
+                            <span class="item-desc">Перевірка подільності числа n на x та y</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="6" data-icon="🔢" tabindex="0">
+                        <span class="item-num">06</span>
+                        <div class="item-info">
+                            <span class="item-title">Аналіз масиву</span>
+                            <span class="item-desc">Мін, макс, сума, середнє та непарні елементи</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="7" data-icon="▦" tabindex="0">
+                        <span class="item-num">07</span>
+                        <div class="item-info">
+                            <span class="item-title">Двовимірний масив</span>
+                            <span class="item-desc">Модифікація головної діагоналі матриці 5х5</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="8" data-icon="🧮" tabindex="0">
+                        <span class="item-num">08</span>
+                        <div class="item-info">
+                            <span class="item-title">Арифметика</span>
+                            <span class="item-desc">Чотири базові арифметичні операції</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="9" data-icon="🔍" tabindex="0">
+                        <span class="item-num">09</span>
+                        <div class="item-info">
+                            <span class="item-title">Аналіз числа</span>
+                            <span class="item-desc">Перевірка знаку, простоти та подільності числа</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="10" data-icon="🔁" tabindex="0">
+                        <span class="item-num">10</span>
+                        <div class="item-info">
+                            <span class="item-title">Обернення масиву</span>
+                            <span class="item-desc">Перевертання та піднесення чисел до квадрату</span>
+                        </div>
+                    </li>
+                    <li class="dropdown-item" role="option" data-value="11" data-icon="✂️" tabindex="0">
+                        <span class="item-num">11</span>
+                        <div class="item-info">
+                            <span class="item-title">Видалення дублікатів</span>
+                            <span class="item-desc">Видаляє повторювані елементи в масиві</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Info panel -->
+            <div class="info-panel" id="infoPanel">
+                <div class="info-icon" id="infoIcon">💡</div>
+                <p class="info-text" id="infoText">Оберіть завдання зі списку, щоб побачити опис</p>
+            </div>
+
+            <!-- Run button -->
+            <button class="run-btn" id="runBtn" disabled type="button" aria-label="Запустити скрипт">
+                <span class="run-btn-text">Запустити</span>
+                <svg class="run-btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 3l14 9-14 9V3z" fill="currentColor" />
+                </svg>
+            </button>
+        </section>
+
+        <!-- Output section for scripts that write to DOM -->
+        <section class="output-section" id="outputSection" aria-live="polite" aria-label="Результат виконання">
+            <div class="output-header">
+                <span class="output-dot"></span>
+                <span class="output-label">Вивід</span>
+            </div>
+            <div class="output-content">
+                <p id="num" class="output-text"></p>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="script_main.js"></script>
+</body>
+
+</html>
