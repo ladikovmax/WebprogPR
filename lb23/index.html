@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота 23</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <section class="card" aria-labelledby="pageTitle">
+            <p class="badge">JavaScript</p>
+            <h1 id="pageTitle">Лабораторна робота <span>#23</span></h1>
+            <h2>Завдання 1</h2>
+
+            <button class="run-btn" id="runBtn" type="button">
+                <svg class="run-icon" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 5v14l11-7z"></path>
+                </svg>
+                <span>Запустити</span>
+            </button>
+
+            <p class="result" id="result" aria-live="polite"></p>
+        </section>
+
+        <section class="card dynamic-grid" aria-labelledby="gridTitle">
+            <div class="calculator-title-row">
+                <div>
+                    <p class="badge">OOP</p>
+                    <h2 id="gridTitle">Завдання 2</h2>
+                </div>
+
+                <div class="period-toggle" role="group" aria-label="Період розрахунку">
+                    <button class="period-btn active" type="button" data-period="day">День</button>
+                    <button class="period-btn" type="button" data-period="night">Ніч</button>
+                </div>
+            </div>
+
+            <section class="compact-group result-group">
+                <h3>Підсумок</h3>
+                <div class="summary-board" aria-live="polite">
+                    <div class="summary-item">
+                        <span>Баланс</span>
+                        <strong id="activeBalance">0 МВт</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Передача</span>
+                        <strong id="transferAmount">0 МВт</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Вартість / прибуток</span>
+                        <strong id="financeResult">0 ум. од.</strong>
+                    </div>
+                    <div class="summary-item">
+                        <span>Лінії</span>
+                        <strong id="lineCapacity">0 МВт</strong>
+                    </div>
+                </div>
+
+                <div class="meter-panel">
+                    <div class="meter-row">
+                        <div class="meter-label">
+                            <span>Генерація</span>
+                            <strong id="generationValue">0 МВт</strong>
+                        </div>
+                        <div class="meter">
+                            <span class="meter-fill generation-fill" id="generationMeter"></span>
+                        </div>
+                    </div>
+                    <div class="meter-row">
+                        <div class="meter-label">
+                            <span>Споживання</span>
+                            <strong id="consumptionValue">0 МВт</strong>
+                        </div>
+                        <div class="meter">
+                            <span class="meter-fill consumption-fill" id="consumptionMeter"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="calculator-layout">
+                <aside class="control-panel" aria-label="Керування електромережею">
+                    <h3>Параметри</h3>
+                    <div class="shop-grid" id="networkControls"></div>
+
+                    <button class="ghost-btn" id="resetGridBtn" type="button">
+                        <svg class="run-icon" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 5V2L7 7l5 5V9a5 5 0 1 1-4.58 7H3.26A9 9 0 1 0 12 5z"></path>
+                        </svg>
+                        <span>Початкові значення</span>
+                    </button>
+                </aside>
+
+                <div class="network-overview">
+                    <h3>Елементи мережі</h3>
+                    <div class="elements-grid" id="networkElements" aria-label="Елементи електромережі"></div>
+                </div>
+            </div>
+
+            <div class="calculation-report" id="gridResult" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
