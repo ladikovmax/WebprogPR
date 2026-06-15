@@ -1,2 +1,8 @@
 node_modules/
 images/
+!lb24/images/
+!lb24/images/works/
+!lb24/images/works/**
+!lb24/cra/public/images/
+!lb24/cra/public/images/works/
+!lb24/cra/public/images/works/**
