@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    color: #111;
+    background: #fff8c6;
+}
+
+.film-page {
+    max-width: 940px;
+    margin: 0 auto;
+    border: 1px solid #9da3ad;
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.film-card {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    padding: 10px 28px 8px;
+    border-bottom: 1px solid #8cb7f7;
+}
+
+.poster {
+    width: 210px;
+    height: 280px;
+    border: 3px solid green;
+    object-fit: cover;
+    background: #fff;
+}
+
+.film-info {
+    padding-top: 4px;
+    font-size: 17px;
+    line-height: 1.25;
+}
+
+.film-info h1 {
+    margin-bottom: 8px;
+    font-size: 24px;
+}
+
+.film-info a {
+    color: #1b4fb7;
+    text-decoration: none;
+}
+
+.film-info a:hover {
+    text-decoration: underline;
+}
+
+.film-info p {
+    margin-bottom: 2px;
+}
+
+.section {
+    padding: 6px 12px 10px;
+    border-bottom: 1px solid #8cb7f7;
+}
+
+.section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    margin: 0 0 6px 15px;
+    text-indent: 15px;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.photo-carousel {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    gap: 8px;
+    align-items: center;
+    padding: 2px 0 0;
+}
+
+.carousel-viewport {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 24px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 6px 4px 8px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+}
+
+.photo-card {
+    flex: 0 0 calc((100% - 24px) / 2);
+    padding: 6px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    background: #fff;
+    scroll-snap-align: start;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    border: 3px solid orange;
+    object-fit: cover;
+    background: #fff;
+}
+
+.carousel-button {
+    width: 34px;
+    height: 34px;
+    border: 2px solid #2b70c9;
+    background: #fff;
+    color: #0b63c5;
+    cursor: pointer;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.carousel-button:hover {
+    color: #d35400;
+    border-color: #d35400;
+}
+
+@media (max-width: 780px) {
+    body {
+        padding: 12px;
+    }
+
+    .film-card {
+        flex-direction: column;
+        align-items: center;
+        padding: 18px;
+    }
+
+    .film-info {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .photo-carousel {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        gap: 6px;
+    }
+
+    .carousel-button {
+        width: 36px;
+        height: 40px;
+        font-size: 28px;
+    }
+
+    .photo-gallery {
+        gap: 16px;
+        padding-inline: 4px;
+    }
+
+    .photo-card {
+        flex-basis: 100%;
+    }
+
+    .photo-card img {
+        width: 100%;
+        height: 190px;
+    }
+}
