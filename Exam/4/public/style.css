@@ -1,0 +1,29 @@
+body {
+    width: 600px;
+}
+
+form {
+    padding: 24px;
+    border: 2px solid #000;
+}
+
+div {
+    margin: 23px;
+}
+
+label {
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 0 0 0 auto;
+    padding: 8px 20px;
+    border-radius: 8px;
+    background: #aaa;
+    color: white;
+    font: inherit;
+}
+
